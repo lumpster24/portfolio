@@ -5,15 +5,12 @@ import Contact from "./sections/contact/Contact";
 
 function App() {
   return (
-    <div>
-      <h1>Portfolio</h1>
-      <h2>Navbar:</h2>
+    <div style={{ height: "200vh" }}>
       <Navbar />
-      <h2>Hero section:</h2>
       <Hero />
-      <h2>Projects section:</h2>
+
       <Projects />
-      <h2>Contact section:</h2>
+
       <Contact />
     </div>
   );
