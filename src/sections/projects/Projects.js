@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { database, collection, getDocs } from "../../firebase/config";
 
-import Card from "../../components/card/Card";
+import SortFilter from "../../components/filter/SortFilter";
+import Filter from "../../components/filter/Filter";
 
 import styles from "./Projects.module.css";
 
@@ -21,78 +22,94 @@ export default function Projects() {
   console.log(projects);
 
   return (
-    <div>
-      <p>project</p>
+    <div className="section">
+      <h2 className="title">My Projects</h2>
+      <div className={styles["filter-container"]}>
+        <SortFilter />
+        <Filter />
+      </div>
+
       {!projects ? (
         "loading..."
       ) : (
-        <ul className={styles.flex}>
+        <ul className={styles.container}>
           {projects.map((project) => (
-            <li>
-              <Card class={styles["project-card"]}>
-                {/* title */}
-                <p>{project.title}</p>
+            <li class={styles["project-card"]}>
+              {/* title */}
+              <h3 className={styles["project-title"]}>{project.title}</h3>
 
-                {/* preview */}
+              {/* preview */}
+              <img
+                src={project.previewURL}
+                alt="website preview gif"
+                className={styles.gif}
+              />
 
-                {/* languages */}
-                <ul className={styles.flex}>
-                  {project.languages.map((lang) => (
-                    <li>{lang}</li>
-                  ))}
-                </ul>
-
-                {/* links */}
-                <ul className={styles.flex}>
+              {/* languages */}
+              <ul className={styles.flex}>
+                {project.languages.map((lang) => (
                   <li>
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Github link
-                    </a>
+                    <p className={styles.languages}>{lang}</p>
                   </li>
-                  <li>
-                    <a
-                      href={project.websiteLink}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Website link
-                    </a>
-                  </li>
-                </ul>
+                ))}
+              </ul>
 
-                {/* description */}
-                <p>{project.description}</p>
+              {/* links */}
+              <ul className={`${styles.flex} ${styles.links}`}>
+                <li>
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={project.websiteLink}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    Website
+                  </a>
+                </li>
+              </ul>
 
-                {/* bullet box */}
-                <div className={styles.flex}>
-                  {/* features */}
-                  <div>
-                    <p>Features:</p>
-                    <ul>
-                      {project.features.map((feature) => {
-                        return <li className={styles.li}>{feature}</li>;
-                      })}
-                    </ul>
-                  </div>
-                  {/* learned list */}
-                  <div>
-                    <p>Concepts learned through this project:</p>
-                    <ul>
-                      {project.learnedList.map((concept) => {
-                        return <li className={styles.li}>{concept}</li>;
-                      })}
-                    </ul>
-                  </div>
+              {/* description */}
+              <p className={`${styles.text} ${styles.description}`}>
+                {project.description}
+              </p>
+
+              {/* bullet box */}
+              <div className={styles["bullet-box"]}>
+                {/* features */}
+                <div style={{ width: "50%" }}>
+                  <p className={styles.subtitle}>Features:</p>
+                  <ul className={styles.text}>
+                    {project.features.map((feature) => {
+                      return <li className={styles.li}>{feature}</li>;
+                    })}
+                  </ul>
                 </div>
+                {/* learned list */}
+                <div style={{ width: "50%" }}>
+                  <p className={styles.subtitle}>Concepts learned:</p>
+                  <ul className={styles.text}>
+                    {project.learnedList.map((concept) => {
+                      return <li className={styles.li}>{concept}</li>;
+                    })}
+                  </ul>
+                </div>
+              </div>
 
-                {/* biggest challenge */}
-                <p>Biggest Challenge in this project:</p>
-                <p>{project.biggestChallenge}</p>
-              </Card>
+              {/* biggest challenge */}
+              <div className={styles.bottom}>
+                <p className={styles.subtitle}>
+                  Biggest challenge in this project:
+                </p>
+                <p className={styles.text}>{project.biggestChallenge}</p>
+              </div>
             </li>
           ))}
         </ul>

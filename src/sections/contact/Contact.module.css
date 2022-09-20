@@ -1,0 +1,17 @@
+.contact-form {
+  width: 60%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1.8rem;
+
+  width: 100%;
+}

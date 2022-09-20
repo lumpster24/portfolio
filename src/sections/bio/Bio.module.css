@@ -1,0 +1,77 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bio-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100vh;
+}
+
+.bio-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.length-container {
+  display: flex;
+  justify-content: center;
+  transform: translateX(-25%);
+
+  gap: 2rem;
+  margin: 0 1.2rem;
+}
+
+.selection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots {
+  width: 2rem;
+  height: 2rem;
+  border: black solid 1px;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: all 0.1s;
+}
+
+.dots:hover {
+  background-color: #999;
+}
+
+.active {
+  background-color: black;
+}
+
+.bio-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 50%;
+
+  font-size: 1.8rem;
+}
+
+.bio-fade {
+  animation: fadeIn linear 0.3s;
+}
+
+.pictures {
+  width: 40%;
+  background-color: pink;
+}

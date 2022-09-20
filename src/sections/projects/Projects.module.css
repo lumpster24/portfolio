@@ -1,13 +1,81 @@
+.text {
+  font-size: 1.5rem;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
 .flex {
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  align-self: stretch;
+
+  border-radius: 15px;
+  box-shadow: 0 1px 0 #777;
+  border: 2px black solid;
+
+  padding: 1rem;
+}
+
+.project-title {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.gif {
+  width: 90%;
+  padding: 1rem 0;
+  align-self: center;
+}
+
+.languages {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 0;
+}
+
+.links {
+  font-size: 1.8rem;
+  text-decoration: underline;
+}
+
+.description {
+  padding: 0.8rem 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.bullet-box {
+  display: flex;
+  gap: 0.8rem;
+  padding-bottom: 1.8rem;
 }
 
 .li {
   list-style: square;
+}
+
+.bottom {
+  margin-top: auto;
 }

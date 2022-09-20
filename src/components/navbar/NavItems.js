@@ -19,12 +19,6 @@ export default function NavItems({ ulClass, liClass }) {
         </li>
 
         <li className={`${styles.li} ${liClass}`}>
-          <a href="/" className={styles.a}>
-            Qualifications
-          </a>
-        </li>
-
-        <li className={`${styles.li} ${liClass}`}>
           <a
             href="https://github.com/Knikkey"
             target="_blank"
@@ -32,6 +26,12 @@ export default function NavItems({ ulClass, liClass }) {
             className={styles.a}
           >
             GitHub
+          </a>
+        </li>
+
+        <li className={`${styles.li} ${liClass}`}>
+          <a href="/" className={styles.a}>
+            Resume
           </a>
         </li>
 
