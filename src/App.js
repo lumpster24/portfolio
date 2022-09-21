@@ -9,11 +9,18 @@ function App() {
   const [seeContactForm, setSeeContactForm] = useState(false);
 
   return (
-    <div style={{ height: "200vh" }}>
+    <div>
       <Navbar setSeeContactForm={setSeeContactForm} />
       <Hero setSeeContactForm={setSeeContactForm} />
-      <Projects />
-      <Bio />
+
+      <section id="projects">
+        <Projects />
+      </section>
+
+      <section id="bio">
+        <Bio />
+      </section>
+
       {seeContactForm && <Contact setSeeContactForm={setSeeContactForm} />}
     </div>
   );

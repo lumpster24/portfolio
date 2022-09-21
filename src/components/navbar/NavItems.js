@@ -2,18 +2,23 @@ import "./NavItems.module.css";
 
 import styles from "./NavItems.module.css";
 
-export default function NavItems({ ulClass, liClass, setSeeContactForm }) {
+export default function NavItems({
+  ulClass,
+  liClass,
+  setSeeContactForm,
+  toggleMenu,
+}) {
   return (
     <div>
-      <ul className={ulClass}>
+      <ul className={ulClass} onClick={toggleMenu}>
         <li className={`${styles.li} ${liClass}`}>
-          <a href="/" className={styles.a}>
+          <a href="#projects" className={styles.a}>
             My Projects
           </a>
         </li>
 
         <li className={`${styles.li} ${liClass}`}>
-          <a href="/" className={styles.a}>
+          <a href="#bio" className={styles.a}>
             About me
           </a>
         </li>

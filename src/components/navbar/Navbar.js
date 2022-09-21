@@ -12,13 +12,14 @@ export default function Navbar({ setSeeContactForm }) {
   };
 
   return (
-    <nav>
+    <nav className={navOpen ? styles.navbar : ""}>
       <button className={styles["menu-btn"]} onClick={toggleMenu}>
         <img src={menuIcon} alt="menu icon" />
       </button>
       {navOpen && (
         <NavItems
           ulClass={styles["open-menu"]}
+          toggleMenu={toggleMenu}
           setSeeContactForm={setSeeContactForm}
         />
       )}

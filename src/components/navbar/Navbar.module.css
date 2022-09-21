@@ -15,8 +15,14 @@ nav {
   display: flex;
   flex-direction: row-reverse;
   gap: 20px;
-
   max-width: fit-content;
+  padding-top: 1rem;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 1);
+  border: #999 solid 1px;
+  border-radius: 15px;
 }
 
 .open-menu {
