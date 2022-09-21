@@ -3,18 +3,18 @@ import Hero from "./sections/hero/Hero";
 import Projects from "./sections/projects/Projects";
 import Bio from "./sections/bio/Bio";
 import Contact from "./sections/contact/Contact";
+import { useState } from "react";
 
 function App() {
+  const [seeContactForm, setSeeContactForm] = useState(false);
+
   return (
     <div style={{ height: "200vh" }}>
-      <Navbar />
-      <Hero />
-
+      <Navbar setSeeContactForm={setSeeContactForm} />
+      <Hero setSeeContactForm={setSeeContactForm} />
       <Projects />
-
       <Bio />
-
-      <Contact />
+      {seeContactForm && <Contact setSeeContactForm={setSeeContactForm} />}
     </div>
   );
 }

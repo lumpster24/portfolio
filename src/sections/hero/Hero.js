@@ -7,7 +7,7 @@ import firebaseIcon from "./icons/firebaseIcon.svg";
 
 import styles from "./Hero.module.css";
 
-export default function Hero() {
+export default function Hero({ setSeeContactForm }) {
   return (
     <div className={styles["hero-container"]}>
       <h1 className={styles.name}>Nicholas Bingham</h1>
@@ -31,7 +31,10 @@ export default function Hero() {
       </ul>
       <div className={styles.pic}>Pic?</div>
 
-      <NavItems ulClass={styles["flex-nav"]} />
+      <NavItems
+        setSeeContactForm={setSeeContactForm}
+        ulClass={styles["flex-nav"]}
+      />
     </div>
   );
 }

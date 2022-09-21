@@ -34,7 +34,7 @@ export default function Projects() {
       ) : (
         <ul className={styles.container}>
           {projects.map((project) => (
-            <li class={styles["project-card"]}>
+            <li className={styles["project-card"]}>
               {/* title */}
               <h3 className={styles["project-title"]}>{project.title}</h3>
 

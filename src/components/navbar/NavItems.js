@@ -2,7 +2,7 @@ import "./NavItems.module.css";
 
 import styles from "./NavItems.module.css";
 
-export default function NavItems({ ulClass, liClass }) {
+export default function NavItems({ ulClass, liClass, setSeeContactForm }) {
   return (
     <div>
       <ul className={ulClass}>
@@ -36,9 +36,9 @@ export default function NavItems({ ulClass, liClass }) {
         </li>
 
         <li className={`${styles.li} ${liClass}`}>
-          <a href="/" className={styles.a}>
+          <div className={styles.a} onClick={() => setSeeContactForm(true)}>
             Contact me
-          </a>
+          </div>
         </li>
       </ul>
     </div>

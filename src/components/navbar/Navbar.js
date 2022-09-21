@@ -4,14 +4,11 @@ import styles from "./Navbar.module.css";
 import menuIcon from "./menuIcon.svg";
 import NavItems from "./NavItems";
 
-export default function Navbar() {
+export default function Navbar({ setSeeContactForm }) {
   const [navOpen, setNavOpen] = useState(false);
 
   const toggleMenu = () => {
-    setTimeout(
-      setNavOpen((prev) => !prev),
-      300
-    );
+    setNavOpen((prev) => !prev);
   };
 
   return (
@@ -19,7 +16,12 @@ export default function Navbar() {
       <button className={styles["menu-btn"]} onClick={toggleMenu}>
         <img src={menuIcon} alt="menu icon" />
       </button>
-      {navOpen && <NavItems ulClass={navOpen ? styles["open-menu"] : ""} />}
+      {navOpen && (
+        <NavItems
+          ulClass={styles["open-menu"]}
+          setSeeContactForm={setSeeContactForm}
+        />
+      )}
     </nav>
   );
 }

@@ -70,8 +70,8 @@ export default function Bio() {
                 <p>
                   I have lived abroad for a total of 10 years and am proficient
                   in two foreign languages, the experience of which helps me
-                  know exactly what I need to learn languages. That naturally
-                  includes programming languages as well.
+                  know exactly what I need in order to learn languages. That
+                  naturally includes programming languages as well.
                 </p>
               </div>
             )}
@@ -86,8 +86,8 @@ export default function Bio() {
                 <p>
                   I have lived abroad for a total of 10 years and am proficient
                   in two foreign languages, the experience of which helps me
-                  know exactly what I need to learn languages. That naturally
-                  includes programming languages as well.
+                  know exactly what I need in order to learn languages. That
+                  naturally includes programming languages as well.
                 </p>
                 <p>
                   My hobbies include weightlifting and playing video games. I've
