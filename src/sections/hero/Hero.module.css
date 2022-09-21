@@ -17,9 +17,24 @@
   max-height: fit-content;
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .logo {
   height: 5rem;
   width: 5rem;
+}
+
+.languages {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 0;
+  width: 100%;
 }
 
 .pic {
