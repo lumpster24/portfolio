@@ -3,13 +3,13 @@ import Hero from "./sections/hero/Hero";
 import Projects from "./sections/projects/Projects";
 import Bio from "./sections/bio/Bio";
 import Contact from "./sections/contact/Contact";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [seeContactForm, setSeeContactForm] = useState(false);
 
   return (
-    <div>
+    <>
       <Navbar setSeeContactForm={setSeeContactForm} />
       <Hero setSeeContactForm={setSeeContactForm} />
 
@@ -22,7 +22,7 @@ function App() {
       </section>
 
       {seeContactForm && <Contact setSeeContactForm={setSeeContactForm} />}
-    </div>
+    </>
   );
 }
 

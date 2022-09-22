@@ -15,8 +15,6 @@ export default function Bio() {
     setBioLength(e.target.getAttribute("id"));
   };
 
-  console.log(prevBioLength.current);
-
   const shortBio = `I am a front-end developer who was born and raised in Hawaii.
   Being naturally curious and creative, I have found web
   development to be an excellent fit for me.`;
@@ -44,7 +42,7 @@ export default function Bio() {
           <div className={styles["bio-info"]}>
             {/* selectors */}
             <ul className={styles["length-container"]}>
-              <li className={styles["selection-container"]}>
+              <li key="1" className={styles["selection-container"]}>
                 <div
                   className={`${styles.dots} ${
                     bioLength === "short" ? styles.active : ""
@@ -54,7 +52,7 @@ export default function Bio() {
                 ></div>
                 <div className={styles["length-words"]}>Short</div>
               </li>
-              <li className={styles["selection-container"]}>
+              <li key="2" className={styles["selection-container"]}>
                 <div
                   className={`${styles.dots} ${
                     bioLength === "medium" ? styles.active : ""
@@ -64,7 +62,7 @@ export default function Bio() {
                 ></div>
                 <div className={styles["length-words"]}>Medium</div>
               </li>
-              <li className={styles["selection-container"]}>
+              <li key="3" className={styles["selection-container"]}>
                 <div
                   className={`${styles.dots} ${
                     bioLength === "long" ? styles.active : ""

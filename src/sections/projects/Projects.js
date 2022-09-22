@@ -8,6 +8,24 @@ import styles from "./Projects.module.css";
 
 export default function Projects() {
   const [projects, setProjects] = useState(null);
+  const [filter, setFilter] = useState("All languages");
+  const [sort, setSort] = useState("new");
+
+  const filteredProjects = projects
+    ? projects.filter((project) => {
+        if (filter === "All languages") return true;
+        else {
+          return project.languages.includes(filter);
+        }
+      })
+    : null;
+
+  const sortedProjects =
+    filteredProjects && sort === "new"
+      ? filteredProjects.sort(function (a, b) {
+          return b.id - a.id;
+        })
+      : filteredProjects;
 
   useEffect(() => {
     async function getProjects() {
@@ -19,22 +37,20 @@ export default function Projects() {
     getProjects();
   }, []);
 
-  console.log(projects);
-
   return (
     <div className="section">
       <h2 className="title">My Projects</h2>
       <div className={styles["filter-container"]}>
-        <SortFilter />
-        <Filter />
+        <SortFilter setSort={setSort} />
+        <Filter setFilter={setFilter} />
       </div>
 
-      {!projects ? (
+      {!sortedProjects ? (
         "loading..."
       ) : (
         <ul className={styles.container}>
-          {projects.map((project) => (
-            <li className={styles["project-card"]}>
+          {sortedProjects.map((project) => (
+            <li key={project.id} className={styles["project-card"]}>
               {/* title */}
               <h3 className={styles["project-title"]}>{project.title}</h3>
 
