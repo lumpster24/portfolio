@@ -64,7 +64,7 @@ export default function Projects() {
               {/* languages */}
               <ul className={styles.flex}>
                 {project.languages.map((lang) => (
-                  <li>
+                  <li key={lang}>
                     <p className={styles.languages}>{lang}</p>
                   </li>
                 ))}
@@ -72,7 +72,7 @@ export default function Projects() {
 
               {/* links */}
               <ul className={`${styles.flex} ${styles.links}`}>
-                <li>
+                <li key={project.githubLink}>
                   <a
                     href={project.githubLink}
                     target="_blank"
@@ -81,7 +81,7 @@ export default function Projects() {
                     GitHub
                   </a>
                 </li>
-                <li>
+                <li key={project.websiteLink}>
                   <a
                     href={project.websiteLink}
                     target="_blank"
@@ -104,7 +104,11 @@ export default function Projects() {
                   <p className={styles.subtitle}>Features:</p>
                   <ul className={styles.text}>
                     {project.features.map((feature) => {
-                      return <li className={styles.li}>{feature}</li>;
+                      return (
+                        <li key={feature.trim()} className={styles.li}>
+                          {feature}
+                        </li>
+                      );
                     })}
                   </ul>
                 </div>
@@ -113,7 +117,11 @@ export default function Projects() {
                   <p className={styles.subtitle}>Concepts learned:</p>
                   <ul className={styles.text}>
                     {project.learnedList.map((concept) => {
-                      return <li className={styles.li}>{concept}</li>;
+                      return (
+                        <li key={concept.trim()} className={styles.li}>
+                          {concept}
+                        </li>
+                      );
                     })}
                   </ul>
                 </div>

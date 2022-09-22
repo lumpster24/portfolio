@@ -11,7 +11,10 @@ function App() {
   return (
     <>
       <Navbar setSeeContactForm={setSeeContactForm} />
-      <Hero setSeeContactForm={setSeeContactForm} />
+
+      <section id="hero">
+        <Hero setSeeContactForm={setSeeContactForm} />
+      </section>
 
       <section id="projects">
         <Projects />

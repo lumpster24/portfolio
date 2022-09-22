@@ -3,6 +3,7 @@ import styles from "./Navbar.module.css";
 
 import menuIcon from "./menuIcon.svg";
 import NavItems from "./NavItems";
+import ToTop from "./ToTop";
 
 export default function Navbar({ setSeeContactForm }) {
   const [navOpen, setNavOpen] = useState(false);
@@ -12,17 +13,20 @@ export default function Navbar({ setSeeContactForm }) {
   };
 
   return (
-    <nav className={navOpen ? styles.navbar : ""}>
-      <button className={styles["menu-btn"]} onClick={toggleMenu}>
-        <img src={menuIcon} alt="menu icon" />
-      </button>
-      {navOpen && (
-        <NavItems
-          ulClass={styles["open-menu"]}
-          toggleMenu={toggleMenu}
-          setSeeContactForm={setSeeContactForm}
-        />
-      )}
-    </nav>
+    <>
+      <nav className={navOpen ? styles.navbar : ""}>
+        <button className={styles["menu-btn"]} onClick={toggleMenu}>
+          <img src={menuIcon} alt="menu icon" />
+        </button>
+        {navOpen && (
+          <NavItems
+            ulClass={styles["open-menu"]}
+            toggleMenu={toggleMenu}
+            setSeeContactForm={setSeeContactForm}
+          />
+        )}
+      </nav>
+      <ToTop />
+    </>
   );
 }
