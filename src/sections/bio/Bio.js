@@ -5,6 +5,18 @@ import styles from "./Bio.module.css";
 export default function Bio() {
   const [bioLength, setBioLength] = useState("short");
 
+  const prevBioLength = useRef();
+
+  useEffect(() => {
+    prevBioLength.current = bioLength;
+  }, [bioLength]);
+
+  const lengthHandler = (e) => {
+    setBioLength(e.target.getAttribute("id"));
+  };
+
+  console.log(prevBioLength.current);
+
   const shortBio = `I am a front-end developer who was born and raised in Hawaii.
   Being naturally curious and creative, I have found web
   development to be an excellent fit for me.`;
@@ -21,16 +33,6 @@ export default function Bio() {
   the quality of your work can be. Video games have taught me
   how to look at how to improve myself rather than to blame
   outside forces for failure.`;
-
-  const prevBioLength = useRef();
-
-  useEffect(() => {
-    prevBioLength.current = bioLength;
-  }, [bioLength]);
-
-  const lengthHandler = (e) => {
-    setBioLength(e.target.getAttribute("id"));
-  };
 
   return (
     <div className="section">
