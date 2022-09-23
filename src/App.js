@@ -4,6 +4,7 @@ import Projects from "./sections/projects/Projects";
 import Bio from "./sections/bio/Bio";
 import Contact from "./sections/contact/Contact";
 import { useState } from "react";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [seeContactForm, setSeeContactForm] = useState(false);
@@ -24,6 +25,9 @@ function App() {
         <Bio />
       </section>
 
+      <footer>
+        <Footer />
+      </footer>
       {seeContactForm && <Contact setSeeContactForm={setSeeContactForm} />}
     </>
   );
