@@ -23,7 +23,7 @@ const codingLanguages = [
 export default function Hero({ setSeeContactForm }) {
   return (
     <div className={styles["hero-container"]}>
-      <h1 className={styles.name}>Nicholas Bingham</h1>
+      <h1>Nicholas Bingham</h1>
       <h3>Web developer</h3>
       <ul className={styles["logo-box"]}>
         {codingLanguages.map((lang) => {
