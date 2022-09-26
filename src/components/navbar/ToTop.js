@@ -15,12 +15,10 @@ export default function ToTop() {
   return (
     <>
       {scrollY300 && (
-        <div className={styles["to-top"]}>
-          <a href="#hero">
-            <img src={toTop} alt="up arrow" className={styles.arrow} />
-            <p className={styles["to-top-text"]}>To top</p>
-          </a>
-        </div>
+        <a href="#hero" className={styles["to-top"]}>
+          <img src={toTop} alt="up arrow" className={styles.arrow} />
+          <p className={styles["to-top-text"]}>To top</p>
+        </a>
       )}
     </>
   );

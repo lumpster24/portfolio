@@ -3,8 +3,8 @@
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
 
   padding: 2rem 0;
@@ -15,35 +15,50 @@
   gap: 1rem;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 .filter-container {
   display: flex;
   justify-content: space-between;
+  margin: 0 2rem;
 }
 
 .project-card {
   display: flex;
-  flex-direction: column;
-  max-width: 100%;
+  max-width: 80%;
   align-self: stretch;
+  gap: 2rem;
 
   border-radius: 15px;
   box-shadow: 0 1px 0 #777;
   border: 2px black solid;
 
   padding: 1rem;
+  margin: 0 auto;
+}
+
+.gif {
+  width: 30%;
+  padding: 1rem 0;
+  align-self: center;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.project-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .project-title {
   font-size: 2.4rem;
   text-align: center;
-}
-
-.gif {
-  width: 90%;
-  padding: 1rem 0;
-  align-self: center;
 }
 
 .languages {
@@ -58,7 +73,6 @@
 }
 
 .description {
-  padding: 0.8rem 0;
   font-size: 1.6rem;
 }
 
@@ -75,8 +89,38 @@
 
 .li {
   list-style: square;
+  margin-bottom: 10px;
 }
 
 .bottom {
   margin-top: auto;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.bullet-dropdown--closed {
+  font-size: 1.5rem;
+  height: 0;
+  opacity: 0;
+  transition: all 0.5s;
+
+  overflow: hidden;
+}
+
+.bullet-dropdown--open {
+  font-size: 1.5rem;
+  height: 100px;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.dropdown-icon {
+  width: 25px;
+  height: 25px;
 }

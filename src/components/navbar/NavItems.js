@@ -11,7 +11,7 @@ export default function NavItems({
   return (
     <div>
       <ul className={ulClass} onClick={toggleMenu}>
-        <li className={`${styles.li} ${liClass}`}>
+        <li className={`${liClass}`}>
           <a href="#projects" className={styles.a}>
             My Projects
           </a>

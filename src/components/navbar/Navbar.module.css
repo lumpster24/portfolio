@@ -17,6 +17,7 @@ nav {
   gap: 20px;
   max-width: fit-content;
   padding-top: 1rem;
+  z-index: 1;
 }
 
 .navbar {
@@ -78,4 +79,5 @@ nav {
 .arrow {
   width: 20px;
   height: 20px;
+  align-self: center;
 }
