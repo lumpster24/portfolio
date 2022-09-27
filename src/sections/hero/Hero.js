@@ -1,10 +1,14 @@
+import { useState } from "react";
 import NavItems from "../../components/navbar/NavItems";
 import html5Icon from "./icons/html5Icon.svg";
 import css3Icon from "./icons/css3Icon.svg";
 import javascriptIcon from "./icons/javascriptIcon.svg";
 import reactIcon from "./icons/reactIcon.svg";
 import firebaseIcon from "./icons/firebaseIcon.svg";
-// import Leaves from "./Leaves";
+import Namecard from "./Namecard";
+import Projects from "../projects/Projects";
+import Bio from "../bio/Bio";
+import Contact from "../contact/Contact";
 
 import styles from "./Hero.module.css";
 
@@ -16,10 +20,11 @@ const codingLanguages = [
   { logo: firebaseIcon, text: "Firebase", alt: "firebase logo" },
 ];
 
-export default function Hero({ setSeeContactForm }) {
+export default function Hero() {
+  const [page, setPage] = useState("home");
+
   return (
     <div className={styles["hero-container"]}>
-      {/* <Leaves /> */}
       <div className={styles["name-card"]}>
         <h1 className={styles.title}>Nicholas Bingham</h1>
 
@@ -35,10 +40,16 @@ export default function Hero({ setSeeContactForm }) {
           })}
         </ul>
 
-        {/* <div className={styles.pic}>Pic?</div> */}
+        <NavItems />
 
+        <div className={styles["component-container"]}>
+          {page === "home" && <Namecard />}
+          {page === "projects" && <Projects />}
+          {page === "aboutme" && <Bio />}
+          {page === "contactme" && <Contact />}
+        </div>
         <NavItems
-          setSeeContactForm={setSeeContactForm}
+          setPage={setPage}
           ulClass={styles["flex-nav"]}
           liClass={styles.li}
         />

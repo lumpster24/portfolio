@@ -26,6 +26,9 @@
   height: 90%;
   width: 90%;
   border: #26180d solid 2px;
+
+  border-radius: 7px;
+
   box-shadow: 2px 4px 10px #888888;
 
   display: flex;
@@ -124,4 +127,13 @@
 
 .li:hover {
   color: white;
+}
+
+.component-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
