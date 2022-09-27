@@ -33,7 +33,7 @@ export default function Bio() {
   outside forces for failure.`;
 
   return (
-    <div className="section">
+    <div className="section page">
       <div className={styles["bio-section"]}>
         <h2 className="title">About Me</h2>
 

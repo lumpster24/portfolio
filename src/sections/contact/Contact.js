@@ -4,7 +4,7 @@ import emailjs from "emailjs-com";
 import styles from "./Contact.module.css";
 import ConfirmationModal from "./ConfirmationModal";
 
-export default function Contact({ setSeeContactForm }) {
+export default function Contact() {
   const [isPending, setIsPending] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [sendFailed, setSendFailed] = useState(null);
@@ -43,28 +43,14 @@ export default function Contact({ setSeeContactForm }) {
   };
 
   return (
-    <div className={styles["contact-form"]}>
+    <div className={`${styles["contact-form"]} page`}>
       <h2 className="title">Contact me</h2>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="1.5"
-        stroke="currentColor"
-        className={styles["close-icon"]}
-        onClick={() => setSeeContactForm(false)}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M6 18L18 6M6 6l12 12"
-        />
-      </svg>
 
       <form onSubmit={submitHandler} className={styles.form} ref={form}>
         <div className={styles["flex-column"]}>
           <label htmlFor="name">Name:</label>
           <input
+            required
             type="text"
             id="name"
             className={styles.input}
@@ -75,6 +61,7 @@ export default function Contact({ setSeeContactForm }) {
         <div className={styles["flex-column"]}>
           <label htmlFor="email">Email address:</label>
           <input
+            required
             type="email"
             id="email"
             className={styles.input}
@@ -85,6 +72,7 @@ export default function Contact({ setSeeContactForm }) {
         <div className={`${styles["flex-column"]} ${styles["two-col"]}`}>
           <label htmlFor="subject">Subject:</label>
           <input
+            required
             type="text"
             id="subject"
             className={styles.input}
@@ -95,6 +83,7 @@ export default function Contact({ setSeeContactForm }) {
         <div className={`${styles["flex-column"]} ${styles["two-col"]}`}>
           <label htmlFor="message">Message:</label>
           <textarea
+            required
             id="message"
             className={styles.input}
             name="message"
@@ -111,7 +100,6 @@ export default function Contact({ setSeeContactForm }) {
       </form>
       {emailSent && showConfirm && (
         <ConfirmationModal
-          setSeeContactForm={setSeeContactForm}
           setShowConfirm={setShowConfirm}
           sendFailed={sendFailed}
         />

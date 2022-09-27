@@ -1,12 +1,7 @@
 import styles from "./ConfirmationModal.module.css";
 
-export default function ConfirmationModal({
-  setSeeContactForm,
-  setShowConfirm,
-  sendFailed,
-}) {
+export default function ConfirmationModal({ setShowConfirm, sendFailed }) {
   const closeHandler = () => {
-    setSeeContactForm(false);
     setShowConfirm(false);
   };
 
