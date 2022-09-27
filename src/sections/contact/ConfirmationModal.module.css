@@ -6,7 +6,7 @@
 
   border: 1px #333 solid;
   border-radius: 15px;
-  background-color: inherit;
+  background-color: #f8f0e3;
   padding: 3rem;
 
   display: flex;
@@ -33,5 +33,5 @@
 }
 
 .btn:hover {
-  background-color: #666;
+  background-color: #f7e3cb;
 }

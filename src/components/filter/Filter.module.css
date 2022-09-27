@@ -13,4 +13,5 @@ select {
   font-size: inherit;
   font-family: inherit;
   padding: 0.4rem 0.8rem;
+  border-radius: 10px;
 }
