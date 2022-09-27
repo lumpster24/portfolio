@@ -9,9 +9,9 @@ export default function NavItems({
   toggleMenu,
 }) {
   return (
-    <div>
+    <>
       <ul className={ulClass} onClick={toggleMenu}>
-        <li className={`${styles.li} ${liClass}`}>
+        <li className={`${liClass}`}>
           <a href="#projects" className={styles.a}>
             My Projects
           </a>
@@ -46,6 +46,6 @@ export default function NavItems({
           </div>
         </li>
       </ul>
-    </div>
+    </>
   );
 }

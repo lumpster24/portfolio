@@ -3,6 +3,7 @@ import { database, collection, getDocs } from "../../firebase/config";
 
 import SortFilter from "../../components/filter/SortFilter";
 import Filter from "../../components/filter/Filter";
+import dropdown from "./icons/dropdown.svg";
 
 import styles from "./Projects.module.css";
 
@@ -37,6 +38,15 @@ export default function Projects() {
     getProjects();
   }, []);
 
+  const openDropdown = (e) => {
+    e.currentTarget.nextElementSibling.classList.toggle(
+      styles["bullet-dropdown--open"]
+    );
+    e.currentTarget.nextElementSibling.classList.toggle(
+      styles["bullet-dropdown--closed"]
+    );
+  };
+
   return (
     <div className="section">
       <h2 className="title">My Projects</h2>
@@ -46,14 +56,11 @@ export default function Projects() {
       </div>
 
       {!sortedProjects ? (
-        "loading..."
+        <p className={styles.loading}>Loading...</p>
       ) : (
         <ul className={styles.container}>
           {sortedProjects.map((project) => (
             <li key={project.id} className={styles["project-card"]}>
-              {/* title */}
-              <h3 className={styles["project-title"]}>{project.title}</h3>
-
               {/* preview */}
               <img
                 src={project.previewURL}
@@ -61,78 +68,105 @@ export default function Projects() {
                 className={styles.gif}
               />
 
-              {/* languages */}
-              <ul className={styles.flex}>
-                {project.languages.map((lang) => (
-                  <li key={lang}>
-                    <p className={styles.languages}>{lang}</p>
-                  </li>
-                ))}
-              </ul>
+              <div className={styles["project-info-container"]}>
+                {/* title */}
+                <div>
+                  <h3 className={styles["project-title"]}>{project.title}</h3>
 
-              {/* links */}
-              <ul className={`${styles.flex} ${styles.links}`}>
-                <li key={project.githubLink}>
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    GitHub
-                  </a>
-                </li>
-                <li key={project.websiteLink}>
-                  <a
-                    href={project.websiteLink}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    Website
-                  </a>
-                </li>
-              </ul>
+                  {/* languages */}
+                  <ul className={styles.flex}>
+                    {project.languages.map((lang) => (
+                      <li key={lang}>
+                        <p className={styles.languages}>{lang}</p>
+                      </li>
+                    ))}
+                  </ul>
 
-              {/* description */}
-              <p className={`${styles.text} ${styles.description}`}>
-                {project.description}
-              </p>
-
-              {/* bullet box */}
-              <div className={styles["bullet-box"]}>
-                {/* features */}
-                <div style={{ width: "50%" }}>
-                  <p className={styles.subtitle}>Features:</p>
-                  <ul className={styles.text}>
-                    {project.features.map((feature) => {
-                      return (
-                        <li key={feature.trim()} className={styles.li}>
-                          {feature}
-                        </li>
-                      );
-                    })}
+                  {/* links */}
+                  <ul className={`${styles.flex} ${styles.links}`}>
+                    <li key={project.githubLink}>
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        GitHub
+                      </a>
+                    </li>
+                    <li key={project.websiteLink}>
+                      <a
+                        href={project.websiteLink}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        Website
+                      </a>
+                    </li>
                   </ul>
                 </div>
-                {/* learned list */}
-                <div style={{ width: "50%" }}>
-                  <p className={styles.subtitle}>Concepts learned:</p>
-                  <ul className={styles.text}>
-                    {project.learnedList.map((concept) => {
-                      return (
-                        <li key={concept.trim()} className={styles.li}>
-                          {concept}
-                        </li>
-                      );
-                    })}
-                  </ul>
+                {/* description */}
+                <div>
+                  <span className={styles.subtitle}>Description:</span>
+                  <p className={styles.description}>{project.description}</p>
                 </div>
-              </div>
 
-              {/* biggest challenge */}
-              <div className={styles.bottom}>
-                <p className={styles.subtitle}>
-                  Biggest challenge in this project:
-                </p>
-                <p className={styles.text}>{project.biggestChallenge}</p>
+                {/* bullet box */}
+                <div className={styles["bullet-box"]}>
+                  {/* features */}
+                  <div style={{ width: "50%" }}>
+                    <div
+                      className={`${styles.subtitle} ${styles.dropdown}`}
+                      onClick={openDropdown}
+                    >
+                      <p>Features:</p>
+                      <img
+                        className={styles["dropdown-icon"]}
+                        src={dropdown}
+                        alt="dropdown menu icon"
+                      />
+                    </div>
+                    <ul className={styles["bullet-dropdown--closed"]}>
+                      {project.features.map((feature) => {
+                        return (
+                          <li key={feature.trim()} className={styles.li}>
+                            {feature}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                  {/* learned list */}
+                  <div style={{ width: "50%" }}>
+                    <div
+                      className={`${styles.subtitle} ${styles.dropdown}`}
+                      onClick={openDropdown}
+                    >
+                      <p>Concepts learned:</p>
+                      <img
+                        className={styles["dropdown-icon"]}
+                        src={dropdown}
+                        alt="dropdown menu icon"
+                      />
+                    </div>
+                    <ul className={styles["bullet-dropdown--closed"]}>
+                      {project.learnedList.map((concept) => {
+                        return (
+                          <li key={concept.trim()} className={styles.li}>
+                            {concept}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* biggest challenge */}
+                <div className={styles.bottom}>
+                  <p className={styles.subtitle}>
+                    Biggest challenge in this project:
+                  </p>
+                  <p className={styles.text}>{project.biggestChallenge}</p>
+                </div>
               </div>
             </li>
           ))}

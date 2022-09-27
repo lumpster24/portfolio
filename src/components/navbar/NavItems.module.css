@@ -1,4 +1,9 @@
-.a {
-  color: navy;
+.a:hover {
+  color: #f8f0e3;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.a {
+  color: #80502a;
 }
