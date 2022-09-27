@@ -49,9 +49,9 @@ export default function Projects() {
 
   return (
     <div className="section page">
-      <p className={styles.header}>My Projects</p>
       <div className={styles["filter-container"]}>
         <SortFilter setSort={setSort} />
+        <p className={styles.header}>My Projects</p>
         <Filter setFilter={setFilter} />
       </div>
 
