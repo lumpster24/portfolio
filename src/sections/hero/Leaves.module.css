@@ -17,11 +17,13 @@
 
   80% {
     transform: translateX(-10px) rotate(225deg);
+    opacity: 1;
   }
 
   100% {
-    top: 110%;
+    top: 100%;
     transform: translateX(10px) rotate(270deg);
+    opacity: 0;
   }
 }
 
@@ -45,18 +47,18 @@
 
 .leaf2 {
   left: 30%;
-  animation: falling 7s linear infinite;
+  animation: falling 6s linear infinite;
   animation-delay: 3s;
 }
 
 .leaf3 {
   left: 70%;
-  animation: falling 7s linear infinite;
+  animation: falling 5s linear infinite;
   animation-delay: 1s;
 }
 
 .leaf4 {
   left: 80%;
-  animation: falling 7s linear infinite;
+  animation: falling 6s linear infinite;
   animation-delay: 2s;
 }

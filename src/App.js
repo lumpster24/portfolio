@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Navbar setSeeContactForm={setSeeContactForm} />
+      {/* <Navbar setSeeContactForm={setSeeContactForm} /> */}
 
       <section id="hero">
         <Hero setSeeContactForm={setSeeContactForm} />

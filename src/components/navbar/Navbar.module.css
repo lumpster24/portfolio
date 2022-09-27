@@ -45,12 +45,16 @@ nav {
   height: 50%;
   border: none;
   cursor: pointer;
+
   background-color: rgba(0, 0, 0, 0);
+  opacity: 0.6;
+  transition: all 0.3s;
 }
 
 .menu-btn:hover {
   background-color: rgba(0, 0, 0, 0.08);
   transition: all 0.3s;
+  opacity: 1;
 }
 
 .to-top {
