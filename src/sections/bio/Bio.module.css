@@ -17,9 +17,13 @@
 
 .bio-container {
   display: flex;
+  align-items: flex-start;
   justify-content: center;
+  height: 65%;
+  width: 100%;
   gap: 2rem;
   padding: 4rem 2rem;
+  margin: 0;
 }
 
 .length-container {
@@ -74,5 +78,6 @@
 
 .pictures {
   width: 40%;
+  height: 100%;
   background-color: pink;
 }
