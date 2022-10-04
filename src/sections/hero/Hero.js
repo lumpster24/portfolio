@@ -11,8 +11,8 @@ export default function Hero() {
   const [page, setPage] = useState("home");
 
   return (
-    <div className={styles["hero-container"]}>
-      <div className={styles["name-card"]}>
+    <div className={`flex--col ${styles["hero-container"]}`}>
+      <div className={`flex--col ${styles["name-card"]}`}>
         <div className={styles["component-container"]}>
           {page === "home" && <Namecard />}
           {page === "projects" && <Projects />}

@@ -1,11 +1,9 @@
 .hero-container {
   position: relative;
-  display: flex;
-  flex-direction: column;
+
   align-items: center;
   justify-content: center;
-  background: #f8f0e3;
-  background-color: #e9dac6;
+  background-color: #f2e4ce;
 
   height: 100vh;
 }
@@ -15,13 +13,9 @@
   height: 90%;
   width: 90%;
   border: #26180d solid 2px;
-
   border-radius: 7px;
-
   box-shadow: 2px 4px 10px #888888;
 
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
@@ -43,76 +37,13 @@
   z-index: -1;
 }
 
-/* .name-card::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 150px;
-  height: 150px;
-  border-top: 5px solid #26180d;
-  border-left: 5px solid #26180d;
-}
+.component-container {
+  width: 100%;
+  height: 100%;
 
-.name-card::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  right: -10px;
-  width: 150px;
-  height: 150px;
-  border-bottom: 5px solid #26180d;
-  border-right: 5px solid #26180d;
-} */
-
-.title,
-.occupation {
-  color: #26180d;
-}
-
-.title {
-  margin-top: auto;
-}
-
-.logo-box {
   display: flex;
-  gap: 4rem;
-  margin-top: 2rem;
-  padding: 0;
-
-  max-width: fit-content;
-  max-height: fit-content;
-}
-
-.flex {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-}
-
-.logo {
-  height: 5rem;
-  width: 5rem;
-}
-
-.languages {
-  font-size: 1.6rem;
-  font-weight: bold;
-  text-align: center;
-  line-height: 0;
-  width: 100%;
-  color: #26180d;
-}
-
-.pic {
-  height: 25rem;
-  width: 25rem;
-  background-color: aliceblue;
-
-  margin: 3rem auto;
-  z-index: 1;
 }
 
 .flex-nav {
@@ -130,13 +61,4 @@
 
 .li:hover {
   color: white;
-}
-
-.component-container {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

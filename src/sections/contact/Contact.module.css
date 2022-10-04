@@ -1,4 +1,4 @@
-.contact-form {
+.form-container {
   width: 80%;
   padding: 3rem;
 
@@ -12,15 +12,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 
-  font-size: 1.8rem;
-
   width: 100%;
   z-index: 1;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
 }
 
 .two-col {
@@ -28,7 +21,6 @@
 }
 
 .input {
-  font-size: 1.8rem;
   padding: 0.8rem;
   border-radius: 7px;
 }
@@ -42,8 +34,9 @@
   cursor: pointer;
   background-color: white;
   border-radius: 7px;
+  transition: all 0.3s;
 }
 
 .btn:hover {
-  background-color: #f7e3cb;
+  background-color: #f2e4ce;
 }

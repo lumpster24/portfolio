@@ -16,14 +16,19 @@ const codingLanguages = [
 
 export default function Namecard() {
   return (
-    <div className={`${styles["namecard-container"]} page`}>
+    <div className={`${styles["namecard-container"]} fadeIn`}>
       <h1 className={styles.title}>Nicholas Bingham</h1>
+      <div className={styles["occupation-container"]}>
+        <h2 className={styles.occupation}>Web developer</h2>
+      </div>
 
-      <h3 className={styles.occupation}>Web developer</h3>
-      <ul className={styles["logo-box"]}>
+      <ul className={styles["logo-container"]}>
         {codingLanguages.map((lang) => {
           return (
-            <li key={lang.text} className={styles.flex}>
+            <li
+              key={lang.text}
+              className={`flex--col ${styles["lang-container"]}`}
+            >
               <img src={lang.logo} alt={lang.alt} className={styles.logo} />
               <p className={styles.languages}>{lang.text}</p>
             </li>

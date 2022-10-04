@@ -6,9 +6,9 @@ export default function SortFilter({ setSort }) {
   };
 
   return (
-    <div className={styles.filter}>
+    <div className={`flex--col ${styles.filter}`}>
       <label className={styles.label}>Sort by:</label>
-      <select onChange={sortHandler}>
+      <select className={styles.select} onChange={sortHandler}>
         <option value="new">Date (newest)</option>
         <option value="old">Date (oldest)</option>
       </select>

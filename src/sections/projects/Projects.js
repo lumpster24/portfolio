@@ -48,22 +48,24 @@ export default function Projects() {
   };
 
   return (
-    <div className="section page">
+    <div className="section fadeIn">
       <div className={styles["filter-container"]}>
         <SortFilter setSort={setSort} />
-        <p className={styles.header}>My Projects</p>
+        <p className="page-header">My Projects</p>
         <Filter setFilter={setFilter} />
       </div>
 
       {!sortedProjects ? (
         <p className={styles.loading}>Loading...</p>
       ) : (
-        <ul className={`${styles.container} page`}>
+        <ul className={`${styles["projects-container"]} flex--col fadeIn`}>
           {sortedProjects.map((project) => (
-            <li key={project.id} className={styles["project-card"]}>
+            <li key={project.id} className={`fadeIn ${styles["project-card"]}`}>
               {/* title */}
               <div className={styles["project-header"]}>
-                <h3 className={styles["project-title"]}>{project.title}</h3>
+                <p className={`subtitle ${styles["project-title"]}`}>
+                  {project.title}
+                </p>
                 {/* languages */}
                 <ul className={styles.flex}>
                   {project.languages.map((lang) => (
@@ -102,19 +104,21 @@ export default function Projects() {
                 className={styles.gif}
               />
 
-              <div className={styles["project-info-container"]}>
+              <div className={`flex--col ${styles["project-info-container"]}`}>
                 {/* description */}
                 <div>
-                  <span className={styles.subtitle}>Description:</span>
+                  <span className={styles["project-subtitle"]}>
+                    Description:
+                  </span>
                   <p className={styles.description}>{project.description}</p>
                 </div>
 
                 {/* bullet box */}
-                <div className={styles["bullet-box"]}>
+                <div className={styles["bullet-container"]}>
                   {/* features */}
                   <div style={{ width: "50%" }}>
                     <div
-                      className={`${styles.subtitle} ${styles.dropdown}`}
+                      className={`${styles["project-subtitle"]} ${styles.dropdown}`}
                       onClick={openDropdown}
                     >
                       <p>Features:</p>
@@ -124,7 +128,9 @@ export default function Projects() {
                         alt="dropdown menu icon"
                       />
                     </div>
-                    <ul className={styles["bullet-dropdown--closed"]}>
+                    <ul
+                      className={`${styles["small-text"]} ${styles["bullet-dropdown--closed"]}`}
+                    >
                       {project.features.map((feature) => {
                         return (
                           <li key={feature.trim()} className={styles.li}>
@@ -137,7 +143,7 @@ export default function Projects() {
                   {/* learned list */}
                   <div style={{ width: "50%" }}>
                     <div
-                      className={`${styles.subtitle} ${styles.dropdown}`}
+                      className={`${styles["project-subtitle"]} ${styles.dropdown}`}
                       onClick={openDropdown}
                     >
                       <p>Concepts learned:</p>
@@ -147,7 +153,9 @@ export default function Projects() {
                         alt="dropdown menu icon"
                       />
                     </div>
-                    <ul className={styles["bullet-dropdown--closed"]}>
+                    <ul
+                      className={`${styles["small-text"]} ${styles["bullet-dropdown--closed"]}`}
+                    >
                       {project.learnedList.map((concept) => {
                         return (
                           <li key={concept.trim()} className={styles.li}>
@@ -160,11 +168,13 @@ export default function Projects() {
                 </div>
 
                 {/* biggest challenge */}
-                <div className={styles.bottom}>
-                  <p className={styles.subtitle}>
+                <div>
+                  <p className={styles["project-subtitle"]}>
                     Biggest challenge in this project:
                   </p>
-                  <p className={styles.text}>{project.biggestChallenge}</p>
+                  <p className={styles["small-text"]}>
+                    {project.biggestChallenge}
+                  </p>
                 </div>
               </div>
             </li>

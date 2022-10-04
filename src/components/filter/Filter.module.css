@@ -1,6 +1,4 @@
 .filter {
-  display: flex;
-  flex-direction: column;
   max-width: fit-content;
   font-size: 1.4rem;
 }
@@ -9,7 +7,7 @@
   padding-bottom: 0.2rem;
 }
 
-select {
+.select {
   font-size: inherit;
   font-family: inherit;
   padding: 0.4rem 0.8rem;

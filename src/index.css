@@ -14,7 +14,6 @@ html {
 
 body {
   margin: 0;
-
   padding: 0;
   box-sizing: border-box;
 
@@ -23,11 +22,6 @@ body {
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 h1 {
@@ -45,7 +39,8 @@ h3 {
 h1,
 h2,
 h3,
-h4 {
+h4,
+.subtitle {
   line-height: 1;
   margin: 0;
   padding: 0;
@@ -63,6 +58,24 @@ textarea {
   height: 10rem;
 }
 
+.text {
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  font-size: 4.8rem;
+  font-weight: bold;
+}
+
+.page-header {
+  font-size: 4.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+  align-self: center;
+}
+
 .section {
   padding: 0 2rem;
   margin-top: 2rem;
@@ -70,22 +83,16 @@ textarea {
   height: 100%;
 }
 
-.title {
-  text-align: center;
-}
-
-.overlay {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.3);
-  height: 100%;
-  width: 100%;
-}
-
 .icon {
   height: 25px;
   width: 25px;
 }
 
-.page {
+.fadeIn {
   animation: fadeIn 0.7s linear;
+}
+
+.flex--col {
+  display: flex;
+  flex-direction: column;
 }

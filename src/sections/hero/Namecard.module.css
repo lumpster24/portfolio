@@ -6,31 +6,41 @@
   gap: 1rem;
 }
 
-.title,
-.occupation {
-  color: #26180d;
+.occupation-container {
+  padding: 0.5rem 2rem;
+  background-color: #f3a000;
 }
 
-.title {
-  margin-top: auto;
-}
-
-.logo-box {
+.logo-container {
   display: flex;
   gap: 4rem;
   margin-top: 2rem;
   padding: 0;
-
-  max-width: fit-content;
-  max-height: fit-content;
 }
 
-.flex {
-  display: flex;
-  flex-direction: column;
+.lang-container {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+}
+
+.title,
+.occupation {
+  font-family: Montserrat;
+}
+
+.title {
+  color: #481f0f;
+  font-weight: 800;
+  letter-spacing: -4px;
+  margin-top: auto;
+}
+
+.occupation {
+  color: white;
+  text-shadow: 1px 1px #333;
+  letter-spacing: -1px;
+  font-size: 3.6rem;
 }
 
 .logo {
@@ -43,15 +53,5 @@
   font-weight: bold;
   text-align: center;
   line-height: 0;
-  width: 100%;
   color: #26180d;
-}
-
-.pic {
-  height: 25rem;
-  width: 25rem;
-  background-color: aliceblue;
-
-  margin: 3rem auto;
-  z-index: 1;
 }

@@ -7,7 +7,7 @@ import ConfirmationModal from "./ConfirmationModal";
 export default function Contact() {
   const [isPending, setIsPending] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-  const [sendFailed, setSendFailed] = useState(null);
+  const [sendFailed, setSendFailed] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
 
   const form = useRef();
@@ -15,7 +15,6 @@ export default function Contact() {
   const submitHandler = (e) => {
     e.preventDefault();
     setIsPending(true);
-    setShowConfirm(false);
     setSendFailed(null);
     setEmailSent(false);
 
@@ -43,49 +42,53 @@ export default function Contact() {
   };
 
   return (
-    <div className={`${styles["contact-form"]} page`}>
-      <h2 className="title">Contact me</h2>
+    <div className={`${styles["form-container"]} fadeIn`}>
+      <h1 className="page-header">Contact me</h1>
 
-      <form onSubmit={submitHandler} className={styles.form} ref={form}>
-        <div className={styles["flex-column"]}>
+      <form
+        onSubmit={submitHandler}
+        className={`text ${styles.form}`}
+        ref={form}
+      >
+        <div className="flex--col">
           <label htmlFor="name">Name:</label>
           <input
             required
             type="text"
             id="name"
-            className={styles.input}
+            className={`text ${styles.input}`}
             name="name"
           ></input>
         </div>
 
-        <div className={styles["flex-column"]}>
+        <div className="flex--col">
           <label htmlFor="email">Email address:</label>
           <input
             required
             type="email"
             id="email"
-            className={styles.input}
+            className={`text ${styles.input}`}
             name="email"
           ></input>
         </div>
 
-        <div className={`${styles["flex-column"]} ${styles["two-col"]}`}>
+        <div className={`flex--col ${styles["two-col"]}`}>
           <label htmlFor="subject">Subject:</label>
           <input
             required
             type="text"
             id="subject"
-            className={styles.input}
+            className={`text ${styles.input}`}
             name="subject"
           ></input>
         </div>
 
-        <div className={`${styles["flex-column"]} ${styles["two-col"]}`}>
+        <div className={`flex--col ${styles["two-col"]}`}>
           <label htmlFor="message">Message:</label>
           <textarea
             required
             id="message"
-            className={styles.input}
+            className={`text ${styles.input}`}
             name="message"
           ></textarea>
         </div>

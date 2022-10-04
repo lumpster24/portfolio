@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 import styles from "./Bio.module.css";
 
+const pictures = ["blue", "red", "green", "indigo", "pink"];
+
 export default function Bio() {
   const [bioLength, setBioLength] = useState("short");
 
@@ -14,6 +16,17 @@ export default function Bio() {
   const lengthHandler = (e) => {
     setBioLength(e.target.getAttribute("id"));
   };
+
+  const pic = useRef();
+
+  useEffect(() => {
+    let i = 0;
+    setInterval(() => {
+      if (i >= pictures.length) i = 0;
+      pic.current.style.background = pictures[i];
+      i++;
+    }, 5000);
+  });
 
   const shortBio = `I am a front-end developer who was born and raised in Hawaii.
   Being naturally curious and creative, I have found web
@@ -33,13 +46,13 @@ export default function Bio() {
   outside forces for failure.`;
 
   return (
-    <div className="section page">
-      <div className={styles["bio-section"]}>
-        <h2 className="title">About Me</h2>
+    <div className="section fadeIn">
+      <div className={`flex--col ${styles["bio-section"]}`}>
+        <h2 className="page-header">About Me</h2>
 
         {/* Bio section */}
         <div className={styles["bio-container"]}>
-          <div className={styles["bio-info"]}>
+          <div className={`flex--col ${styles["bio-info"]}`}>
             {/* selectors */}
             <ul className={styles["length-container"]}>
               <li key="1" className={styles["selection-container"]}>
@@ -103,7 +116,7 @@ export default function Bio() {
             </div>
           </div>
           {/* bio pictures */}
-          <div className={styles.pictures}>PICTURES</div>
+          <div ref={pic} className={styles.pictures}></div>
         </div>
       </div>
     </div>

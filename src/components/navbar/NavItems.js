@@ -4,6 +4,7 @@ import styles from "./NavItems.module.css";
 
 export default function NavItems({ ulClass, liClass, setPage }) {
   const pageHandler = (e) => {
+    //setPage found in Hero.js
     setPage(e.target.value);
   };
 
