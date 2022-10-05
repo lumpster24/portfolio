@@ -22,23 +22,7 @@
   }
 }
 
-.bio-section {
-  gap: 2rem;
-  height: 100%;
-  padding: 2rem;
-}
-
-.bio-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  height: 65%;
-  width: 100%;
-  gap: 2rem;
-  padding: 4rem 2rem;
-  margin: 0;
-}
-
+/************ Containers ************/
 .length-container {
   display: flex;
   justify-content: center;
@@ -56,6 +40,19 @@
   align-items: center;
 }
 
+.bio-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 65%;
+  width: 100%;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  margin: 0;
+}
+
+/************ Not containers ************/
+
 .dots {
   width: 2rem;
   height: 2rem;
@@ -71,7 +68,8 @@
   background-color: #999;
 }
 
-.active {
+.active,
+.active:hover {
   background-color: black;
 }
 
@@ -86,16 +84,6 @@
 
 .bio-fade {
   animation: fadeIn linear 0.3s;
-}
-
-.show-bio {
-  opacity: 1;
-  transition: all 0.3s;
-}
-
-.hide-bio {
-  opacity: 0;
-  transition: all 0.3s;
 }
 
 .pictures {
