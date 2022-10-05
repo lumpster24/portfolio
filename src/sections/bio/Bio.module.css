@@ -91,7 +91,10 @@
 .pictures {
   width: 40%;
   height: 100%;
-  background-color: orange;
+  background-image: url("./pics/default.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 
-  animation: slideshow ease-in infinite 5s;
+  animation: slideshow linear infinite 5s;
 }
