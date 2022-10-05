@@ -12,20 +12,23 @@ export default function Bio() {
     prevBioLength.current = bioLength;
   }, [bioLength]);
 
+  useEffect(() => {
+    let i = 0;
+
+    let changePic = setInterval(() => {
+      if (i >= pics.length) i = 0;
+      pic.current.style.backgroundImage = `url(${pics[i]})`;
+
+      i++;
+    }, 5000);
+    return () => clearInterval(changePic);
+  }, []);
+
   const lengthHandler = (e) => {
     setBioLength(e.target.getAttribute("id"));
   };
 
   const pic = useRef();
-
-  useEffect(() => {
-    let i = 0;
-    setInterval(() => {
-      if (i >= pics.length) i = 0;
-      pic.current.style.backgroundImage = `url(${pics[i]})`;
-      i++;
-    }, 5000);
-  });
 
   const shortBio = `I am a front-end developer who was born and raised in Hawaii.
   Being naturally curious and creative, I have found web

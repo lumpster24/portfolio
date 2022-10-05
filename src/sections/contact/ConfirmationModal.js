@@ -20,7 +20,7 @@ export default function ConfirmationModal({ setShowConfirm, sendFailed }) {
         </div>
       ) : (
         <div className={styles["confirmation-modal"]}>
-          <h3>Oh no! An error occured.</h3>
+          <h1>Oh no! An error occured.</h1>
           <p className={styles.text}>{sendFailed}</p>
           <button className={styles.btn} onClick={closeHandler}>
             Got it

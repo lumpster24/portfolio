@@ -88,6 +88,16 @@
   animation: fadeIn linear 0.3s;
 }
 
+.show-bio {
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.hide-bio {
+  opacity: 0;
+  transition: all 0.3s;
+}
+
 .pictures {
   width: 40%;
   height: 100%;
