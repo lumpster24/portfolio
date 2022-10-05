@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
+import pics from "./pics";
 import styles from "./Bio.module.css";
-
-const pictures = ["blue", "red", "green", "indigo", "pink"];
 
 export default function Bio() {
   const [bioLength, setBioLength] = useState("short");
@@ -22,8 +21,8 @@ export default function Bio() {
   useEffect(() => {
     let i = 0;
     setInterval(() => {
-      if (i >= pictures.length) i = 0;
-      pic.current.style.background = pictures[i];
+      if (i >= pics.length) i = 0;
+      pic.current.style.backgroundImage = `url(${pics[i]})`;
       i++;
     }, 5000);
   });
