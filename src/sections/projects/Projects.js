@@ -40,10 +40,10 @@ export default function Projects() {
 
   const openDropdown = (e) => {
     e.currentTarget.nextElementSibling.classList.toggle(
-      styles["bullet-dropdown--open"]
+      styles["bullet-dropdown-open"]
     );
     e.currentTarget.nextElementSibling.classList.toggle(
-      styles["bullet-dropdown--closed"]
+      styles["bullet-dropdown-closed"]
     );
   };
 
@@ -58,7 +58,7 @@ export default function Projects() {
       {!sortedProjects ? (
         <p className={styles.loading}>Loading...</p>
       ) : (
-        <ul className={`${styles["projects-container"]} flex--col fadeIn`}>
+        <ul className={`${styles["projects-container"]} flex-col fadeIn`}>
           {sortedProjects.map((project) => (
             <li key={project.id} className={`fadeIn ${styles["project-card"]}`}>
               {/* title */}
@@ -104,7 +104,7 @@ export default function Projects() {
                 className={styles.gif}
               />
 
-              <div className={`flex--col ${styles["project-info-container"]}`}>
+              <div className={`flex-col ${styles["project-info-container"]}`}>
                 {/* description */}
                 <div>
                   <span className={styles["project-subtitle"]}>
@@ -129,7 +129,7 @@ export default function Projects() {
                       />
                     </div>
                     <ul
-                      className={`${styles["small-text"]} ${styles["bullet-dropdown--closed"]}`}
+                      className={`${styles["small-text"]} ${styles["bullet-dropdown-closed"]}`}
                     >
                       {project.features.map((feature) => {
                         return (
@@ -154,7 +154,7 @@ export default function Projects() {
                       />
                     </div>
                     <ul
-                      className={`${styles["small-text"]} ${styles["bullet-dropdown--closed"]}`}
+                      className={`${styles["small-text"]} ${styles["bullet-dropdown-closed"]}`}
                     >
                       {project.learnedList.map((concept) => {
                         return (

@@ -115,7 +115,7 @@
   height: 25px;
 }
 
-.bullet-dropdown--closed {
+.bullet-dropdown-closed {
   height: 0;
   opacity: 0;
   transition: all 0.5s;
@@ -123,7 +123,7 @@
   overflow: hidden;
 }
 
-.bullet-dropdown--open {
+.bullet-dropdown-open {
   height: 10rem;
   opacity: 1;
   transition: all 0.5s;

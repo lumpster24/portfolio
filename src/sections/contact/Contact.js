@@ -50,7 +50,7 @@ export default function Contact() {
         className={`text ${styles.form}`}
         ref={form}
       >
-        <div className="flex--col">
+        <div className="flex-col">
           <label htmlFor="name">Name:</label>
           <input
             required
@@ -61,7 +61,7 @@ export default function Contact() {
           ></input>
         </div>
 
-        <div className="flex--col">
+        <div className="flex-col">
           <label htmlFor="email">Email address:</label>
           <input
             required
@@ -72,7 +72,7 @@ export default function Contact() {
           ></input>
         </div>
 
-        <div className={`flex--col ${styles["two-col"]}`}>
+        <div className={`flex-col ${styles["two-col"]}`}>
           <label htmlFor="subject">Subject:</label>
           <input
             required
@@ -83,7 +83,7 @@ export default function Contact() {
           ></input>
         </div>
 
-        <div className={`flex--col ${styles["two-col"]}`}>
+        <div className={`flex-col ${styles["two-col"]}`}>
           <label htmlFor="message">Message:</label>
           <textarea
             required

@@ -11,9 +11,9 @@ function App() {
   const [page, setPage] = useState("home");
 
   return (
-    <div className={`flex--col ${styles["container__app"]}`}>
-      <div className={`flex--col ${styles["name-card"]}`}>
-        <div className={styles["container__component"]}>
+    <div className={`flex-col ${styles["app-container"]}`}>
+      <div className={`flex-col ${styles["name-card"]}`}>
+        <div className={styles["component-container"]}>
           {page === "home" && <Namecard />}
           {page === "projects" && <Projects />}
           {page === "aboutme" && <Bio />}

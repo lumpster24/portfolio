@@ -6,7 +6,7 @@ export default function Filter({ setFilter }) {
   };
 
   return (
-    <div className={`flex--col ${styles.filter}`}>
+    <div className={`flex-col ${styles.filter}`}>
       <label className={styles.label}>Filter by language:</label>
       <select className={styles.select} onChange={filterHandler}>
         <option>All languages</option>

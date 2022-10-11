@@ -8,7 +8,7 @@ export default function ConfirmationModal({ setShowConfirm, sendFailed }) {
   return (
     <>
       {!sendFailed ? (
-        <div className={`flex--col ${styles["confirmation-modal"]}`}>
+        <div className={`flex-col ${styles["confirmation-modal"]}`}>
           <h1 className="page-header">Thank you for reaching out!</h1>
           <p className="text">
             Your email has been sent. Please allow 1-2 business days for a

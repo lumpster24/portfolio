@@ -49,12 +49,12 @@ export default function Bio() {
 
   return (
     <div className="section fadeIn">
-      <div className={`flex--col section`}>
+      <div className={`flex-col section`}>
         <h2 className="page-header">About Me</h2>
 
         {/* Bio section */}
         <div className={styles["bio-container"]}>
-          <div className={`flex--col ${styles["bio-info"]}`}>
+          <div className={`flex-col ${styles["bio-info"]}`}>
             {/* selectors */}
             <ul className={styles["length-container"]}>
               <li key="1" className={styles["selection-container"]}>

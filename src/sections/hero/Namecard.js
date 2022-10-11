@@ -27,7 +27,7 @@ export default function Namecard() {
           return (
             <li
               key={lang.text}
-              className={`flex--col ${styles["lang-container"]}`}
+              className={`flex-col ${styles["lang-container"]}`}
             >
               <img src={lang.logo} alt={lang.alt} className={styles.logo} />
               <p className={styles.languages}>{lang.text}</p>

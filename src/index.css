@@ -84,7 +84,7 @@ textarea {
   animation: fadeIn 0.7s linear;
 }
 
-.flex--col {
+.flex-col {
   display: flex;
   flex-direction: column;
 }
