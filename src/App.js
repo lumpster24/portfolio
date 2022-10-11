@@ -11,9 +11,9 @@ function App() {
   const [page, setPage] = useState("home");
 
   return (
-    <div className={`flex--col ${styles["app-container"]}`}>
+    <div className={`flex--col ${styles["container__app"]}`}>
       <div className={`flex--col ${styles["name-card"]}`}>
-        <div className={styles["component-container"]}>
+        <div className={styles["container__component"]}>
           {page === "home" && <Namecard />}
           {page === "projects" && <Projects />}
           {page === "aboutme" && <Bio />}
@@ -21,7 +21,7 @@ function App() {
         </div>
         <NavItems
           setPage={setPage}
-          ulClass={styles["flex-nav"]}
+          ulClass={styles["nav"]}
           liClass={styles.li}
         />
       </div>

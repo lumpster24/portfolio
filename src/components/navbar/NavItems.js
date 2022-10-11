@@ -9,7 +9,7 @@ export default function NavItems({ ulClass, liClass, setPage }) {
   };
 
   return (
-    <>
+    <nav>
       <ul className={ulClass}>
         <li className={`${liClass}`}>
           <button
@@ -68,6 +68,6 @@ export default function NavItems({ ulClass, liClass, setPage }) {
           </a>
         </li>
       </ul>
-    </>
+    </nav>
   );
 }

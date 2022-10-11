@@ -1,5 +1,5 @@
 /************ Containers ************/
-.app-container {
+.container__app {
   position: relative;
 
   align-items: center;
@@ -38,7 +38,7 @@
   z-index: -1;
 }
 
-.component-container {
+.container__component {
   width: 100%;
   height: 100%;
 
@@ -47,7 +47,7 @@
   justify-content: center;
 }
 
-.flex-nav {
+.nav {
   display: flex;
   gap: 4rem;
   font-size: 2.4rem;

@@ -89,10 +89,10 @@
 .pictures {
   width: 40%;
   height: 100%;
-  background-image: url("./pics/default.jpg");
+  background-image: url("./pics/default.webp");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 
-  animation: slideshow linear infinite 5s;
+  animation: slideshow ease-in infinite 5s;
 }
