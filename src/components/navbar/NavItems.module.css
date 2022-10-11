@@ -1,11 +1,12 @@
-.a:hover {
-  color: #f8f0e3;
-  cursor: pointer;
+.a {
+  color: #80502a;
+  text-decoration: underline;
   transition: all 0.3s;
 }
 
-.a {
-  color: #80502a;
+.a:hover {
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 .page-nav {
@@ -20,9 +21,4 @@
 .page-nav:hover,
 .a:hover {
   color: #997355;
-}
-
-.a {
-  text-decoration: underline;
-  transition: all 0.3s;
 }

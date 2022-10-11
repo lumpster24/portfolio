@@ -20,7 +20,7 @@ export default function Bio() {
       pic.current.style.backgroundImage = `url(${pics[i]})`;
 
       i++;
-    }, 5000);
+    }, 6000);
     return () => clearInterval(changePic);
   }, []);
 

@@ -4,6 +4,7 @@ import Namecard from "./sections/hero/Namecard";
 import Projects from "./sections/projects/Projects";
 import Bio from "./sections/bio/Bio";
 import Contact from "./sections/contact/Contact";
+import Footer from "./components/footer/Footer";
 
 import styles from "./App.module.css";
 
@@ -25,6 +26,7 @@ function App() {
           liClass={styles.li}
         />
       </div>
+      <Footer />
     </div>
   );
 }
