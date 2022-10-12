@@ -35,15 +35,14 @@ export default function Bio() {
   development to be an excellent fit for me.`;
 
   const mediumBio = `I have lived abroad for a total of 10 years and am proficient
-  in two foreign languages, the experience of which helps me
-  know exactly what I need in order to learn languages. That
-  naturally includes programming languages as well.`;
+  in two foreign languages, which helps me
+  know exactly what I need in order to learn languages, including programming languages. This along with my 8 years of teaching experience has helped me hone my communication skills, making me a valuble team member.`;
 
   const longBio = `My hobbies include weightlifting and playing video games. I've
   found weightlifting to be great at molding not only the
   physical body, but the mind as well. It has taught me how
-  important keeping to a routine, consistantly improving, and
-  the quality of your work can be. Video games have taught me
+  important qualities such as keeping to a routine, consistantly improving, and
+  producing quality work can be. Video games have taught me
   how to look at how to improve myself rather than to blame
   outside forces for failure.`;
 

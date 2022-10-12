@@ -63,7 +63,12 @@ export default function NavItems({ ulClass, liClass, setPage }) {
         </li>
 
         <li className={`${styles.li} ${liClass}`}>
-          <a href="/" className={styles.a}>
+          <a
+            href="/aaa"
+            target="_blank"
+            rel="noreferrer noopener"
+            className={styles.a}
+          >
             Resume
           </a>
         </li>
