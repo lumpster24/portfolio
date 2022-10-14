@@ -1,10 +1,9 @@
-import "./NavItems.module.css";
-
 import styles from "./NavItems.module.css";
+import resume from "../resume/Nicholas Bingham Resume.pdf";
 
 export default function NavItems({ ulClass, liClass, setPage }) {
   const pageHandler = (e) => {
-    //setPage found in Hero.js
+    //setPage found in App.js
     setPage(e.target.value);
   };
 
@@ -64,7 +63,7 @@ export default function NavItems({ ulClass, liClass, setPage }) {
 
         <li className={`${styles.li} ${liClass}`}>
           <a
-            href="/aaa"
+            href={resume}
             target="_blank"
             rel="noreferrer noopener"
             className={styles.a}
