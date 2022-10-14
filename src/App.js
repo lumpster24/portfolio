@@ -7,26 +7,28 @@ import Contact from "./sections/contact/Contact";
 
 import styles from "./App.module.css";
 
-function App() {
-  const [page, setPage] = useState("home");
+// ib, cd: suggestion: use react router rather than tracking the current page and switching out the component
 
-  return (
-    <div className={`flex--col ${styles["app-container"]}`}>
-      <div className={`flex--col ${styles["name-card"]}`}>
-        <div className={styles["component-container"]}>
-          {page === "home" && <Namecard />}
-          {page === "projects" && <Projects />}
-          {page === "aboutme" && <Bio />}
-          {page === "contactme" && <Contact />}
-        </div>
-        <NavItems
-          setPage={setPage}
-          ulClass={styles["flex-nav"]}
-          liClass={styles.li}
-        />
-      </div>
-    </div>
-  );
+function App() {
+	const [page, setPage] = useState("home");
+
+	return (
+		<div className={`flex--col ${styles["app-container"]}`}>
+			<div className={`flex--col ${styles["name-card"]}`}>
+				<div className={styles["component-container"]}>
+					{page === "home" && <Namecard />}
+					{page === "projects" && <Projects />}
+					{page === "aboutme" && <Bio />}
+					{page === "contactme" && <Contact />}
+				</div>
+				<NavItems
+					setPage={setPage}
+					ulClass={styles["flex-nav"]}
+					liClass={styles.li}
+				/>
+			</div>
+		</div>
+	);
 }
 
 export default App;
