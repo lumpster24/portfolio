@@ -1,6 +1,18 @@
 import styles from "./NavItems.module.css";
 import resume from "../resume/Nicholas Bingham Resume.pdf";
 
+const pages = ["Home", "My Projects", "About Me"];
+const externals = [
+  {
+    name: "Github",
+    link: "https://github.com/Knikkey",
+  },
+  {
+    name: "Resume",
+    link: { resume },
+  },
+];
+
 export default function NavItems({ ulClass, liClass, setPage }) {
   const pageHandler = (e) => {
     //setPage found in App.js

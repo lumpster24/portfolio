@@ -27,7 +27,6 @@ export default function Contact() {
       )
       .then(
         (result) => {
-          console.log(result.text);
           e.target.reset();
           setEmailSent(true);
           setShowConfirm(true);
@@ -39,6 +38,10 @@ export default function Contact() {
           setIsPending(false);
         }
       );
+  };
+
+  const closeHandler = () => {
+    setShowConfirm(false);
   };
 
   return (
@@ -93,18 +96,14 @@ export default function Contact() {
           ></textarea>
         </div>
 
-        {!isPending ? (
-          <button className={styles.btn}>Send</button>
-        ) : (
-          <button disabled className={styles.btn}>
-            Loading...
-          </button>
-        )}
+        <button disabled={isPending} className={styles.btn}>
+          {isPending ? "Loading..." : "Send"}
+        </button>
       </form>
       {emailSent && showConfirm && (
         <ConfirmationModal
-          setShowConfirm={setShowConfirm}
           sendFailed={sendFailed}
+          closeHandler={closeHandler}
         />
       )}
     </div>
